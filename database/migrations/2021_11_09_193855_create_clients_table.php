@@ -20,7 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('phone_number');
             $table->string('street_name');
             $table->integer('street_number');
-            
+            $table->timestamps();
         });
     }
 

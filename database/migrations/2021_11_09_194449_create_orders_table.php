@@ -21,16 +21,17 @@ class CreateOrdersTable extends Migration
             $table->string('payment_type');
             $table->double('total_amount');
             
-            $table->integer('user_id');
-            $table->integer('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('created_by_id')->unsigned();
+            $table->foreign('created_by_id')->references('id')->on('users')->onDelete('cascade');
 
 
-            $table->integer('client_id');
-            $table->integer('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->integer('client_id')->unsigned();
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
 
-            $table->integer('dessert_id');
-            $table->integer('dessert_id')->references('id')->on('desserts')->onDelete('cascade');
+            $table->integer('dessert_id')->unsigned();
+            $table->foreign('dessert_id')->references('id')->on('desserts')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

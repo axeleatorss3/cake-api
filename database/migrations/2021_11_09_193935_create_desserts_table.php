@@ -22,7 +22,7 @@ class CreateDessertsTable extends Migration
             $table->string('portions');
             $table->double('price');
             $table->string('type');
-            
+            $table->timestamps();
         });
     }
 
