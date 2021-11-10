@@ -15,8 +15,14 @@ class CreateDessertsTable extends Migration
     {
         Schema::create('desserts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('flavor');
+            $table->string('description');
+            $table->string('image_url');
+            $table->string('portions');
+            $table->double('price');
+            $table->string('type');
             
-            $table->timestamps();
         });
     }
 
